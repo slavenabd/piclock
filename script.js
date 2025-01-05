@@ -24,19 +24,19 @@ function calculateRadians(hours, minutes) {
 // Function to update the clock
 function updateClock() {
   const now = new Date();
-  const hours = now.getHours();
+  const hours = now.getHours(); // Local time in 24-hour format
   const minutes = now.getMinutes();
 
+  // Debugging output
+  console.log(`Local time: ${hours}:${minutes}`);
+  
+  // Calculate radians
   const radians = calculateRadians(hours, minutes);
-  const digitalTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 
+  // Update the display
   const timeDisplay = document.getElementById('timeDisplay');
-
-  if (showDigitalTime) {
-    timeDisplay.textContent = digitalTime;
-  } else {
-    timeDisplay.textContent = radians;
-  }
+  timeDisplay.textContent = radians;
+}
 
   timeDisplay.style.transform = 'scale(1.1)';
   setTimeout(() => (timeDisplay.style.transform = 'scale(1)'), 300); // Animation
