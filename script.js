@@ -3,16 +3,12 @@ let showDigitalTime = false; // Default to radian time
 
 // Function to calculate radians
 function calculateRadians(hours, minutes) {
-  // Calculate the numerator for hours and minutes
-  const hourNumerator = hours * 2; // Correctly account for 2π per hour
-  const minuteNumerator = minutes * 1; // π/30 for each minute
+  const hourNumerator = hours * 2;
+  const minuteNumerator = minutes * 1;
+  const totalNumerator = hourNumerator * 30 + minuteNumerator;
+  const denominator = 30 * 2;
 
-  // Combine numerator for total radians
-  const totalNumerator = hourNumerator * 30 + minuteNumerator; // Convert to a single fraction
-  const denominator = 30 * 2; // Always 60 (30 * 2 for full circle)
-
-  // Simplify the fraction
-  const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b)); // Greatest common divisor
+  const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
   const divisor = gcd(totalNumerator, denominator);
 
   const simplifiedNumerator = totalNumerator / divisor;
@@ -24,19 +20,19 @@ function calculateRadians(hours, minutes) {
 // Function to update the clock
 function updateClock() {
   const now = new Date();
-  const hours = now.getHours(); // Local time in 24-hour format
+  const hours = now.getHours();
   const minutes = now.getMinutes();
 
-  // Debugging output
-  console.log(`Local time: ${hours}:${minutes}`);
-  
-  // Calculate radians
   const radians = calculateRadians(hours, minutes);
+  const digitalTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 
-  // Update the display
   const timeDisplay = document.getElementById('timeDisplay');
-  timeDisplay.textContent = radians;
-}
+
+  if (showDigitalTime) {
+    timeDisplay.textContent = digitalTime;
+  } else {
+    timeDisplay.textContent = radians;
+  }
 
   timeDisplay.style.transform = 'scale(1.1)';
   setTimeout(() => (timeDisplay.style.transform = 'scale(1)'), 300); // Animation
