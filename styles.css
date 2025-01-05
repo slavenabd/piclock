@@ -1,80 +1,80 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  header {
-    margin-bottom: 20px;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  text-align: center;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.clock {
+  margin: 30px auto;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.radian-time {
+  font-size: 2rem;
+  font-weight: bold;
+  user-select: none;
+  transition: all 0.3s ease-in-out;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: var(--footer-text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .clock {
-    margin: 30px auto;
-    padding: 20px;
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-  }
-  
+
   .radian-time {
-    font-size: 2rem;
-    font-weight: bold;
-    user-select: none;
-    transition: all 0.3s ease-in-out;
+    font-size: 1.5rem;
   }
-  
-  footer {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: var(--footer-text-color);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 1.5rem;
-    }
-  
-    .radian-time {
-      font-size: 1.5rem;
-    }
-  }
-  
-  /* Light Theme */
-  :root {
-    --bg-color: #f0f0f0;
-    --text-color: #333;
-    --card-bg: #fff;
-    --footer-text-color: gray;
-  }
-  
-  /* Dark Theme */
-  :root.dark {
-    --bg-color: #1e1e1e;
-    --text-color: #f0f0f0;
-    --card-bg: #333;
-    --footer-text-color: #ccc;
-  }  
+}
+
+/* Light Theme */
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #333;
+  --card-bg: #fff;
+  --footer-text-color: gray;
+}
+
+/* Dark Theme */
+:root.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --card-bg: #333;
+  --footer-text-color: #ccc;
+}
