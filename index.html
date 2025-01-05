@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PiClock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PiClock</h1>
+      <button id="themeToggle">Toggle Dark Mode</button>
+    </header>
+    <main>
+      <div class="clock">
+        <div id="timeDisplay" class="radian-time" onclick="toggleTimeFormat()">Loading...</div>
+      </div>
+    </main>
+    <footer>
+      &copy; 2025 <a href="https://github.com/slavenabd/piclock" target="_blank" rel="noopener noreferrer">PiClock</a>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
