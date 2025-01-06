@@ -3,7 +3,7 @@ let showDigitalTime = false; // Default to radian time
 
 // Function to calculate radians
 function calculateRadians(hours, minutes) {
-  const hourNumerator = hours * 2;
+  const hourNumerator = hours * 4;
   const minuteNumerator = minutes * 1;
   const totalNumerator = hourNumerator * 30 + minuteNumerator;
   const denominator = 30 * 2;
